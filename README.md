@@ -13,73 +13,86 @@ W. Avy likes your analysis, but he wants more information about temperature tren
 
 ## Resources and Before Start Notes:
 
-* Data Source: `PyBer_Challenge_starter_code.ipynb` named later as `PyBer_Challenge.ipynb`
-* Data File: file.csv
-* Software: Matplotli 3.2.2, Python 3.9, Visual Studio Code 1.50.0, Anaconda 4.8.5, Jupyter Notebook 6.1.4, Pandas
+* Data Source: `SurfsUp_Challenge_starter_code.ipynb` named later as `SurfsUp_Challenge.ipynb`
+* Data File: `hawaii.sqlite`
+* Software: Matplotli 3.2.2, Python 3.9, Visual Studio Code 1.50.0, Anaconda 4.8.5, Jupyter Notebook 6.1.4, Pandas, Numpy, Sqlalchemy.
 
 For more information, read the [`Documentation on Python data typess`](https://docs.python.org/3.6/library/stdtypes.html#numeric-types-int-float-complex). 
 
-## Review the Geographic Coordinate System
+## Jupyter Notebook Review
 
-We use the **geographic coordinate system (GCS)** to reference any point on Earth by its latitude and longitude coordinates.
+> We'll kick our analysis off by checking on three tools: Jupyter Notebook, VS Code, and GitHub.
 
-**Latitudes** are imaginary lines on Earth that run parallel east to west and are measured in angular units called degrees, minutes, and seconds, with 60 minutes in a degree and 60 seconds in a minute. Sometimes a latitude is referred to as a **parallel**. Consider, for example, the embattled 38th parallel (38° north) in East Asia that roughly demarcates North Korea and South Korea.
+The first tool we'll check on is Jupyter Notebook. As you already know, Jupyter notebook files are great for sharing code. Since Jupyter Notebook is run in a browser, you will be able to easily share your analysis with W. Avy. All investors will need to do is download the file and run the code you provide.
 
-The **equator** is an imaginary line around the middle of the earth that is equidistant from the North and South Poles and has a latitude of 0°. The equator splits Earth into Northern and Southern Hemispheres.
+Check that you have Jupyter Notebook installed by viewing your Applications folder. Open Terminal (on Mac) or Command Prompt (on Windows) and run the command `jupyter --version`. If a version number is returned (any version number is fine) you're good to go. If a version number is not returned, you'll need to reinstall the program.
 
-Lines of latitude on Earth run east to west.
+## VS Code
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l1.png?raw=true)
+We'll also be using VS Code in this module to create our Flask application. To make sure you have it installed, go to the Anaconda Navigator application and check the list of applications within the Navigator. If you do not see it in the list, go ahead and install it.
 
-All latitude lines above the equator are measured northward and considered positive, after 0° (the equator) and up to 90°, or 90° north (the North Pole). All latitude lines below the equator are measured southward and considered negative, before 0° (the equator) and down to –90°, or 90° south (the South Pole).
+![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/N.1.PNG?raw=true)
 
-The equator splits Earth into the Northern and Southern hemispheres, with positive north and negative south latitudes.
+## Open Starter Jupyter Notebook
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l2.png?raw=true)
+Previously, we've opened Jupyter notebook files via the command line. In this module, we'll use a different method: Anaconda Navigator. There is no right or wrong way to open the file; this is just another option at your disposal.
 
-**Longitudes** are imaginary lines on Earth that run from the North to the South Poles and are called ****meridians**. The **prime meridian** represents zero meridian, the origin for longitude coordinates, and splits Earth into the Eastern and Western Hemispheres.
+The Jupyter Notebook file, `Your_File.ipynb`, is already downloaded in the surfs_up folder. Navigate to this folder.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l3.png?raw=true)
+Next, open the Anaconda Navigator application, which you should find in the Applications folder. Once you've opened Anaconda-Navigator, find the Jupyter Notebook application icon and click it. This icon should be the top center item, as shown below:
 
-The prime meridian passes through Greenwich, England, from which longitude east and west is measured.
+![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/N.2.PNG?raw=true)
 
-The marker of the prime meridian in Greenwich,England
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l4.png?raw=true)
+When you click the Anaconda Navigator icon, a new command line window will open, followed by a webpage showing the files on your computer. Navigate through this file structure to find the surfs_up folder where you saved your `Your_File.ipynb` file. Click the Jupyter Notebook file to open it.
 
-All meridians east of the prime meridian are considered positive, after 0° and up to 180°. All meridians west of the prime meridian are considered negative, before 0° and down to –180°.
+Nice work! Now we're ready to explore SQLite.
 
-The prime meridian splits Earth into the Eastern and Western
-hemispheres, with positive eastern and negative western
-longitudes.
+## SQLite Advantages
+While there are a few specific use cases for SQLite, we'll be focusing on how it can be beneficial to you and where you might get the most value from it. The main advantages are:
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l5.png?raw=true)
+1. **It's local.** One of the core advantages of SQLite is that it allows you to create databases locally on your computer to support testing and easy prototyping. This is beneficial, because if you want to test something out and you need a database, it's not always the most convenient to set up a SQL database server just to try something out.
+2. **There's an app for that.** Another advantage of SQLite databases are that they can be used on a mobile phone app. Most mobile phone games will use an SQLite database to store certain information about you or your players statistics. While we won't be creating a mobile app in this module, it's still helpful to understand the full context.
 
-All together, the lines of latitude (parallels) and longitude (meridians) make up a geographic grid, as if the Earth were wrapped in graph paper with intersecting horizontal and vertical lines mapping to specific locations.
+## SQLite Disadvantages
+SQLite also has a couple of disadvantages, however. They are:
 
-GCS makes it possible to pinpoint any place on Earth by providing its precise address, which is the intersection of its latitude and longitude lines.
+1. **It's local.** If you've used a MYSQL database before, you might have noticed that you can have multiple users access the database. With SQLite, there are no users. SQL is local: stored on one computer or phone. So, only that computer or phone will have access.
+2. **There are fewer security features:** one other disadvantage to be aware of is that SQLite doesn't have as many security features as a traditional SQL database. While it's not something specifically to be concerned with for this module, just keep that in mind as you create other databases later on.
 
-Longitude and latitude lines intersect and form a geographic grid
-system across the Earth's
-surface.
+Good work with SQLite! Now let's move on to SQLAlchemy.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/l6.png?raw=true)
+## SQLAlchemy ORM
+One of the primary features of SQLAlchemy is the **Object Relational Mapper**, which is commonly referred to as ORM. ORM allows you to create classes in your code that can be mapped to specific tables in a given database. This allows us to create a special type of system called a **decoupled system**.
 
-## Review how to Generate Random Latitudes and Longitudes
+To understand ORMs and decoupled systems, consider the following scenario. Suppose you are cleaning out the garage, and you find a bunch of wires or ropes that are all knotted together. We would call this a **tightly coupled system:** all of the different ropes are connected to each other, so if we go to grab just one, the whole mess comes along with it. What the ORM does for us is untangle—or decouple—all of those ropes, so we can use just one of them at a time. When we pick one up, we won't pick up the whole knot; or, if one element breaks, it doesn't affect any of the other cords.
 
-Before we write the algorithm to generate the latitudes and longitudes, we need to refresh our memory of where people live in the world. Time for another quick geography lesson!
+Generally speaking, the less coupling in our code, the better. If there are a bunch of relationships between all of your coding components and one of them breaks, everything breaks.
 
-Earth's surface is covered by 70% water while the rest is covered by land. So, we can assume 70% of the latitude and longitude coordinates we generate are positioned over a body of water, whether an ocean, major lake (e.g., Lake Superior), or major river (e.g., Amazon). Geographic coordinates over a body of water may not be close to a city, especially if in the middle of an ocean.
+The ORM helps us keep our systems decoupled. We'll get into more specific details about how we can keep our code decoupled, but for now, just remember that your references will be to classes in your code instead of specific tables in the database, and that we'll be able to influence each class independently.
 
-Seven continental landmasses comprise 30% of Earth's surface. Some land is uninhabitable or sparsely populated due to extreme terrain and climes (e.g., Sahara, Siberia, the Himalayas, and areas of the western United States).
+## SQLAlchemy Create Engine
+Another really great feature of SQLAlchemy is the `create engine` function. This function's primary purpose is to set up the ability to query a SQLite database. After all, data just sitting in a database that we can't access does us no good.
 
-First consider the bodies of water. Start with at least 1,500 latitudes and longitudes, because 500 divided by 0.3 (30% land mass) equals 1,666 latitudes and longitudes.
+In order to connect to our SQLite database, we need to use the `create_engine()` function. This function doesn't actually connect to our database; it just prepares the database file to be connected to later on.
 
-We'll generate random latitudes and longitudes to ensure coordinates are fairly distributed around the world. An algorithm will pick random numbers between the low and high values for latitudes and longitudes. Also, the latitudes and longitudes must be floating-point decimal numbers, as each angular unit of degrees, minutes, and seconds can be represented by a decimal number. For example, Kailua-Kona, Hawaii has the angular coordinates 19° 38' 23.9784'' north and 155° 59' 48.9588'' west and can be written as a decimal number as follows: 19.639994, -155.996933.
+This function will typically have one parameter, which is the location of the SQLite database file. Try this function by adding the following line to your code.
 
-To generate random numbers, we can use the Python `random` module. This module is part of the Python and Anaconda installation, so we don't need to install it. Let's test some `random` module functions to find one that can help us.
+````Python
+engine = create_engine("sqlite:///hawaii.sqlite")
+````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/World_Weather_Analysis/blob/main/Resources/Images/rndfnc.PNG?raw=true)
+We've got our engine created—good work! Next we're going to reflect our existing database into a new model with the `automap_base()` function. Reflecting a database into a new model essentially means to transfer the contents of the database into a different structure of data. 
+
+## SQLAlchemy Automap Base
+**Automap Base** creates a base class for an automap schema in SQLAlchemy. Basically, it sets up a foundation for us to build on in SQLAlchemy, and by adding it to our code, it will help the rest of our code to function properly.
+
+In order for your code to function properly, you will need to add this line to your code:
+
+
+````Python
+Base = automap_base()
+````
 
 Now, after having our refresher on GCS, let's move to our Project!
 
