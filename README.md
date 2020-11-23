@@ -306,7 +306,8 @@ For this part of the Challenge, write a report that describes the key difference
 
 ### The analysis should contain the following::
 
-1. **Overview of the analysis:** Using Python, Pandas functions and methods, and SQLAlchemy, you’ll filter the date column of the Measurements table in the `hawaii.sqlite` database to retrieve all the temperatures for the month of June. You’ll then convert those temperatures to a list, create a DataFrame from the list, and generate the summary statistics.
+1. **Overview of the analysis:** Using Python, Pandas functions and methods, and SQLAlchemy, we’ll filter the date column of the Measurements table in the `hawaii.sqlite` database to retrieve all the temperatures for the month of June. We'll then convert those temperatures to a list, create a DataFrame from the list, and generate the summary statistics. Once our dataframe is created we are able to get our summary statistics by using the .describe() method. 
+> Below our Analysis that what we found:
 
 2. **Results:** Data Provided gave us a visibility that on month of June, our location had a total Temps of:
     * Count of 1700 
@@ -318,9 +319,8 @@ For this part of the Challenge, write a report that describes the key difference
     * Max of 85.00
 
 
-    > Image with `Jupyter Notebook` & `Python` Code below.
-
 **June Temps - Report**
+> Image with `Jupyter Notebook` & `Python` Code below.
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/1.4.PNG?raw=true)
 
