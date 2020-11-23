@@ -247,11 +247,8 @@ You will earn a perfect score for Deliverable 2 by completing all requirements b
 
 
 ````Python
-# Create an empty list to hold the weather data.
-city_data = []
-# Print the beginning of the logging.
-print("Beginning Data Retrieval     ")
-print("-----------------------------")
+# 6. Write a query that filters the Measurement table to retrieve the temperatures for the month of December.
+session.query(Measurement.date, Measurement.tobs).filter(extract('month',Measurement.date)==12).all()
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/2.1.PNG?raw=true)
@@ -265,11 +262,8 @@ print("-----------------------------")
 
 
 ````Python
-# Create an empty list to hold the weather data.
-city_data = []
-# Print the beginning of the logging.
-print("Beginning Data Retrieval     ")
-print("-----------------------------")
+# 7. Convert the December temperatures to a list.
+results = session.query(Measurement.date, Measurement.tobs).filter(extract('month',Measurement.date)==12).all()
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/2.2.PNG?raw=true)
@@ -283,11 +277,9 @@ print("-----------------------------")
 
 
 ````Python
-# Create an empty list to hold the weather data.
-city_data = []
-# Print the beginning of the logging.
-print("Beginning Data Retrieval     ")
-print("-----------------------------")
+# 8. Create a DataFrame from the list of temperatures for the month of December. 
+df = pd.DataFrame(results, columns=['date','temperature'])
+df.set_index(df['date'], inplace=True)
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/2.3.PNG?raw=true)
@@ -301,11 +293,8 @@ print("-----------------------------")
 
 
 ````Python
-# Create an empty list to hold the weather data.
-city_data = []
-# Print the beginning of the logging.
-print("Beginning Data Retrieval     ")
-print("-----------------------------")
+# 9. Calculate and print out the summary statistics for the Decemeber temperature DataFrame.
+df.describe()
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/2.4.PNG?raw=true)
