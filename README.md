@@ -311,7 +311,7 @@ For this part of the Challenge, write a report that describes the key difference
 
 2. **Results:** Data Provided gave us a visibility that on months of June and December, our location had a total Temps of:
 
-**June Temps**
+**June Temps - Analysis and Result**
 * Count of 1700 
 * Mean of 74.94 
 * Std of 3.26 
@@ -327,7 +327,9 @@ For this part of the Challenge, write a report that describes the key difference
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/surfs_up/blob/main/Resources/Images/1.4.PNG?raw=true)
 
-**December Temps**
+
+
+**December Temps - Analysis and Result**
 * Count of 1517 
 * Mean of 71.04 
 * Std of 3.75
