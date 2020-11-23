@@ -309,13 +309,13 @@ For this part of the Challenge, write a report that describes the key difference
 1. **Overview of the analysis:** Using Python, Pandas functions and methods, and SQLAlchemy, you’ll filter the date column of the Measurements table in the `hawaii.sqlite` database to retrieve all the temperatures for the month of June. You’ll then convert those temperatures to a list, create a DataFrame from the list, and generate the summary statistics.
 
 2. **Results:** Data Provided gave us a visibility that on month of June, our location had a total Temps of:
-    1. Count of 1700 
-    2. Mean of 74.94 
-    3. Std of 3.26 
-    4. Min of 64.00 
-    5. 25% of 73.00 
-    6. 50% of 75.00
-    7. Max of 85.00
+    * Count of 1700 
+    * Mean of 74.94 
+    * Std of 3.26 
+    * Min of 64.00 
+    * 25% of 73.00 
+    * 50% of 75.00
+    * Max of 85.00
 
 
     > Image with `Jupyter Notebook` & `Python` Code below.
